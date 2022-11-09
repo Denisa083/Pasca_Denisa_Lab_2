@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Pasca_Denisa_Lab_2.Data;
 using Pasca_Denisa_Lab_2.Models;
+using Pasca_Denisa_Lab_2.Models.ViewModels;
 
 namespace Pasca_Denisa_Lab_2.Pages.Categories
 {
@@ -19,7 +20,7 @@ namespace Pasca_Denisa_Lab_2.Pages.Categories
             _context = context;
         }
 
-        public IList<Category> Category { get;set; } = default!;
+        public IList<Category> Category { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
@@ -30,3 +31,4 @@ namespace Pasca_Denisa_Lab_2.Pages.Categories
         }
     }
 }
+

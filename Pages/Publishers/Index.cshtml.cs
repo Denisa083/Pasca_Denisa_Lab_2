@@ -20,8 +20,7 @@ namespace Pasca_Denisa_Lab_2.Pages.Publishers
             _context = context;
         }
 
-        public IList<Publisher> Publisher { get;set; } = default!;
-
+        public IList<Publisher> Publisher { get; set; } = default!;
         public PublisherIndexData PublisherData { get; set; }
         public int PublisherID { get; set; }
         public int BookID { get; set; }
@@ -43,3 +42,4 @@ namespace Pasca_Denisa_Lab_2.Pages.Publishers
         }
     }
 }
+
