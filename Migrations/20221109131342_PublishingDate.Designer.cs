@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pasca_Denisa_Lab_2.Data;
 
@@ -11,9 +12,10 @@ using Pasca_Denisa_Lab_2.Data;
 namespace Pasca_Denisa_Lab_2.Migrations
 {
     [DbContext(typeof(Pasca_Denisa_Lab_2Context))]
-    partial class Pasca_Denisa_Lab_2ContextModelSnapshot : ModelSnapshot
+    [Migration("20221109131342_PublishingDate")]
+    partial class PublishingDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

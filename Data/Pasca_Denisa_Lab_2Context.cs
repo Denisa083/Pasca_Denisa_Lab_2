@@ -19,5 +19,7 @@ namespace Pasca_Denisa_Lab_2.Data
         public DbSet<Pasca_Denisa_Lab_2.Models.Publisher> Publisher { get; set; }
 
         public DbSet<Pasca_Denisa_Lab_2.Models.Author> Author { get; set; }
+
+        public DbSet<Pasca_Denisa_Lab_2.Models.Category> Category { get; set; }
     }
 }
