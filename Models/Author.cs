@@ -10,7 +10,6 @@ namespace Pasca_Denisa_Lab_2.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-
         [Display(Name = "Full Name")]
         public string FullName
         {

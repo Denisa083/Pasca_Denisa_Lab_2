@@ -25,6 +25,8 @@ namespace Pasca_Denisa_Lab_2.Pages.Books
         {
             Book = await _context.Book
                 .Include(b => b.Publisher)
+                .Include(b => b.Author)
+                
                 .ToListAsync();
         }
     }

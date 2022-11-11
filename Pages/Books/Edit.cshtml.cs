@@ -42,6 +42,7 @@ namespace Pasca_Denisa_Lab_2.Pages.Books
                 FullName = x.LastName + " " + x.FirstName
             });
             ViewData["AuthorID"] = new SelectList(authorList, "ID", "FullName");
+
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
             return Page();
         }
