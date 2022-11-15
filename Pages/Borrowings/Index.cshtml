@@ -14,40 +14,35 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Borrowing[0].FirstName)
+                @Html.DisplayNameFor(model => model.Borrowing[0].Member)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Borrowing[0].LastName)
+                @Html.DisplayNameFor(model => model.Borrowing[0].Book)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Borrowing[0].Adress)
+                @Html.DisplayNameFor(model => 
+model.Borrowing[0].Book.Author)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Borrowing[0].Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Borrowing[0].Phone)
+                @Html.DisplayNameFor(model => model.Borrowing[0].ReturnDate)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Borrowing) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+    <tr>
+         <td>
+                @Html.DisplayFor(modelItem => item.Member.FullName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(modelItem => item.Book.Title)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book.Author.FullName)
+                </td>       
             <td>
-                @Html.DisplayFor(modelItem => item.Adress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
+                @Html.DisplayFor(modelItem => item.ReturnDate)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

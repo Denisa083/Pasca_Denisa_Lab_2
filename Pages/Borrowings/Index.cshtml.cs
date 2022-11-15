@@ -25,7 +25,10 @@ namespace Pasca_Denisa_Lab_2.Pages.Borrowings
         {
             if (_context.Borrowing != null)
             {
-                Borrowing = await _context.Borrowing.ToListAsync();
+                Borrowing = await _context.Borrowing
+                .Include(b => b.Book)
+                    .ThenInclude(b => b.Author)
+                .Include(b => b.Member).ToListAsync();
             }
         }
     }

@@ -12,34 +12,22 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Borrowing.FirstName)
+            @Html.DisplayNameFor(model => model.Borrowing.Member)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Borrowing.FirstName)
+            @Html.DisplayFor(model => model.Borrowing.Member.ID)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Borrowing.LastName)
+            @Html.DisplayNameFor(model => model.Borrowing.Book)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Borrowing.LastName)
+            @Html.DisplayFor(model => model.Borrowing.Book.ID)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Borrowing.Adress)
+            @Html.DisplayNameFor(model => model.Borrowing.ReturnDate)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Borrowing.Adress)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Borrowing.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Borrowing.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Borrowing.Phone)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Borrowing.Phone)
+            @Html.DisplayFor(model => model.Borrowing.ReturnDate)
         </dd>
     </dl>
 </div>

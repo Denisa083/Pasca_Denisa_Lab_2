@@ -107,28 +107,20 @@ namespace Pasca_Denisa_Lab_2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<string>("Adress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("BorrowingID")
+                    b.Property<int?>("BookID")
                         .HasColumnType("int");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("MemberID")
+                        .HasColumnType("int");
 
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ReturnDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("BorrowingID");
+                    b.HasIndex("BookID");
+
+                    b.HasIndex("MemberID");
 
                     b.ToTable("Borrowing");
                 });
@@ -148,6 +140,35 @@ namespace Pasca_Denisa_Lab_2.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Member", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Adress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Member");
                 });
 
             modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Publisher", b =>
@@ -203,9 +224,17 @@ namespace Pasca_Denisa_Lab_2.Migrations
 
             modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Borrowing", b =>
                 {
-                    b.HasOne("Pasca_Denisa_Lab_2.Models.Borrowing", null)
+                    b.HasOne("Pasca_Denisa_Lab_2.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookID");
+
+                    b.HasOne("Pasca_Denisa_Lab_2.Models.Member", "Member")
                         .WithMany("Borrowings")
-                        .HasForeignKey("BorrowingID");
+                        .HasForeignKey("MemberID");
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Member");
                 });
 
             modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Author", b =>
@@ -218,14 +247,14 @@ namespace Pasca_Denisa_Lab_2.Migrations
                     b.Navigation("BookCategories");
                 });
 
-            modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Borrowing", b =>
-                {
-                    b.Navigation("Borrowings");
-                });
-
             modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Category", b =>
                 {
                     b.Navigation("BookCategories");
+                });
+
+            modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Member", b =>
+                {
+                    b.Navigation("Borrowings");
                 });
 
             modelBuilder.Entity("Pasca_Denisa_Lab_2.Models.Publisher", b =>

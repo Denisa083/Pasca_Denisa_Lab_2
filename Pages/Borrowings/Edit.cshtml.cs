@@ -36,6 +36,8 @@ namespace Pasca_Denisa_Lab_2.Pages.Borrowings
                 return NotFound();
             }
             Borrowing = borrowing;
+           ViewData["BookID"] = new SelectList(_context.Book, "ID", "ID");
+           ViewData["MemberID"] = new SelectList(_context.Member, "ID", "ID");
             return Page();
         }
 
