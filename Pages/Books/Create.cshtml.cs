@@ -8,9 +8,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Pasca_Denisa_Lab_2.Data;
 using Pasca_Denisa_Lab_2.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Pasca_Denisa_Lab_2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
+
     public class CreateModel : BookCategoriesPageModel
     {
         private readonly Pasca_Denisa_Lab_2.Data.Pasca_Denisa_Lab_2Context _context;
