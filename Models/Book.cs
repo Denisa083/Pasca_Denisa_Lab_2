@@ -12,6 +12,7 @@ namespace Pasca_Denisa_Lab_2.Models
         public string Title { get; set; }
         [Column(TypeName = "decimal(6, 2)")]
         public decimal Price { get; set; }
+        [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
 
         public int? AuthorID { get; set; }
