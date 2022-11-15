@@ -59,9 +59,9 @@ namespace Pasca_Denisa_Lab_2.Pages.Books
                 }
             }
             Book.BookCategories = newBook.BookCategories;
-           
-                _context.Book.Add(newBook);
-                await _context.SaveChangesAsync();
+
+            _context.Book.Add(Book);
+            await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             
             PopulateAssignedCategoryData(_context, newBook);
